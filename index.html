@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Stream</title>
-    <style>
-        /* Remove a margem padrão do navegador */
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Faz o iframe preencher a tela inteira */
-        iframe {
-            /* * 'position: fixed' tira o iframe do fluxo normal 
-             * e o "cola" na tela.
-             */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none; /* Remove qualquer borda */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Live Stream</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <style>
+    /* Tela cheia responsiva */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+    }
+    .wrap {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+    /* Use aspect-ratio somente se o engine suportar; em Tizen antigos pode falhar.
+       Por isso, vamos usar width/height 100% no iframe. */
+    iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #000;
+    }
+  </style>
 </head>
 <body>
-
-
-<iframe 
-    src="https://www.youtube.com/embed/live_stream?channel=UCNZCKDhAVtbh7sddChTxI7w&autoplay=1&mute=1"
-    allow="autoplay; encrypted-media">
-</iframe>
-
-</body>
-
-</html>
-
-
-
-
-
-
+  <div class="wrap">
+    <iframe
+      id="yt-live"
+      title="YouTube Live"
+      src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCNZCKDhAVtbh7sddChTxI7w&autoplay=1&mute=1&fs=1&enablejsapi=1&modestbranding=1&rel=0&playsinline=1&origin=https://SEU-DOMINIO.AQUI"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write"
+      allowfullscreen
+      webkitallowfullscreen
+      mozallowfullscreen
+     
